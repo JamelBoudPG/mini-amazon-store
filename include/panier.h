@@ -19,8 +19,8 @@ public:
     double calculTVA();
     double calculTotalTTC();
 
-    std::vector<Produit*> getProduits();
-    std::vector<int> getQuantities();
+    std::vector<Produit*>& getProduits();
+    std::vector<int>& getQuantity();
 };
 
 #endif

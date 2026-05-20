@@ -133,7 +133,7 @@ double Electronique::computerScore(Panier& Cart, vector<Commande>& History) cons
     //Partie de compter dependant du la panier
     for(i=0; i<Cart.getProduits().size(); i++){
         Produit *pdt = Cart.getProduits()[i];
-        int qte = Cart.getQuantities()[i];
+        int qte = Cart.getQuantity()[i];
         if(pdt->getCategory() == "Electronics"){
             score += 0.5 * qte;
         }
@@ -185,7 +185,7 @@ double Alimentaire::computerScore(Panier& Cart, vector<Commande>& History) const
     //Partie de compter dependant du la panier
     for(i=0; i<Cart.getProduits().size(); i++){
         Produit *pdt = Cart.getProduits()[i];
-        int qte = Cart.getQuantities()[i];
+        int qte = Cart.getQuantity()[i];
         if(pdt->getCategory() == "Food & Drinks"){
             score += 0.5 * qte;
         }
@@ -239,7 +239,7 @@ double Vetements::computerScore(Panier& Cart, vector<Commande>& History) const{
     //Partie de compter dependant du la panier.
     for(i=0; i<Cart.getProduits().size(); i++){
         Produit *pdt = Cart.getProduits()[i];
-        int qte = Cart.getQuantities()[i];
+        int qte = Cart.getQuantity()[i];
         if(pdt->getCategory() == "Clothes"){
             score += 0.5 * qte;
         }
@@ -292,7 +292,7 @@ double Livre::computerScore(Panier& Cart, vector<Commande>& History) const{
     //Partie de compter dependant du la panier.
     for(i=0; i<Cart.getProduits().size(); i++){
         Produit *pdt = Cart.getProduits()[i];
-        int qte = Cart.getQuantities()[i];
+        int qte = Cart.getQuantity()[i];
         if(pdt->getCategory() == "Books & Articles"){
             score += 0.5 * qte;
         }
@@ -345,7 +345,7 @@ double Meuble::computerScore(Panier& Cart, vector<Commande>& History) const{
     //Partie de compter dependant du la panier.
     for(i=0; i<Cart.getProduits().size(); i++){
         Produit *pdt = Cart.getProduits()[i];
-        int qte = Cart.getQuantities()[i];
+        int qte = Cart.getQuantity()[i];
         if(pdt->getCategory() == "Furniture & Housing"){
             furnitureScale += qte;
             if (furnitureScale > 3)
@@ -394,7 +394,7 @@ double Parapharmacie::computerScore(Panier& Cart, vector<Commande>& History) con
     //Partie de compter dependant du la panier
     for(i=0; i<Cart.getProduits().size(); i++){
         Produit *pdt = Cart.getProduits()[i];
-        int qte = Cart.getQuantities()[i];
+        int qte = Cart.getQuantity()[i];
         if(pdt->getCategory() == "Medics & Pharmacy"){
             score += 0.5 * qte;
         }

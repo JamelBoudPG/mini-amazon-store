@@ -64,6 +64,6 @@ void Commande::AfficheCommande() {
     }
     std::cout << std::left << std::setfill('-') << std::setw(col1+col2+col3+col4+col5+12) <<std::endl;
     std::cout << std::left << std::setw(col1+col2+col3+6) << "Total :" << std::setw(col4+3) << Prix_HT << "DH" <<std::endl;
-    std::cout << std::left << std::setw(col1+col2+col3+6) << "Total TVA:" << std::setw(col4) << Prix_HT << "DH" <<std::endl;
-    std::cout << std::left << std::setw(col1+col2+col3+6) << "Prix TTC :" << std::setw(col4) << Prix_HT << "DH" <<std::endl;
+    std::cout << std::left << std::setw(col1+col2+col3+6) << "Total TVA:" << std::setw(col4) << Prix_TVA << "DH" <<std::endl;
+    std::cout << std::left << std::setw(col1+col2+col3+6) << "Prix TTC :" << std::setw(col4) << Prix_TTC << "DH" <<std::endl;
 }

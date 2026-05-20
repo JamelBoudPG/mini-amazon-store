@@ -3,9 +3,8 @@
 #define COMMANDE_H
 
 #include <vector>
-
-class Produit;
-class Panier;
+#include "produit.h"
+#include "panier.h"
 
 /*
 La classe Commande est considérée comme une copie finale du panier qui sera inchangeable.
@@ -13,11 +12,11 @@ Donc les valeurs initialisés dans une commande doîvent être tous constantes.
 */
 class Commande {
     int IdCommande;
-    std::vector<Produit*> const ProductsList;
-    std::vector<int> const Quantity;
-    double const Prix_HT;
-    double const Prix_TVA;
-    double const Prix_TTC;
+    std::vector<Produit*> ProductsList;
+    std::vector<int> Quantity;
+    double Prix_HT;
+    double Prix_TVA;
+    double Prix_TTC;
 
 public:
     //Constructeur Paramétrique
@@ -28,7 +27,8 @@ public:
      Quantity(cmd.Quantity), Prix_HT(cmd.Prix_HT), Prix_TVA(cmd.Prix_TVA), Prix_TTC(cmd.Prix_TTC) {}
     /*On peut considérer la commande comme une moule finale du la panier,
      donc on peut construire une commande à partir d'un panier.*/
-    Commande(const Panier& cart);
+    Commande(int idC, Panier& cart) : IdCommande(idC), ProductsList(cart.getProduits()), Quantity(cart.getQuantity()),
+     Prix_HT(cart.calculTotalHT()), Prix_TVA(cart.calculTVA()), Prix_TTC(cart.calculTotalTTC()) {}
 
     /*Puisqu'on a des valeurs constantes,
      donc on ne peut pas les modifier,

@@ -1,6 +1,6 @@
-#include "produit.h"
-#include "panier.h"
-#include "commande.h"
+#include "../include/produit.h"
+#include "../include/panier.h"
+#include "../include/commande.h"
 
 Produit* recommanderProduit(
     std::vector<Produit*> catalogue,

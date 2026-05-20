@@ -136,7 +136,7 @@ class Livre : public Produit {
     : Produit(idP, nomP, p, 10, stck, det, "Books & Articles"), Auteur(author) {}
 
     //Accesseur et Mutateur
-    string getAuthor() const {return Auteur;}
+    std::string getAuthor() const {return Auteur;}
     void setAuthor(std::string author) {Auteur = author;}
 
     //Fonction override du calculer le score de recommendation pour les livres.

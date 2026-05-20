@@ -1,5 +1,5 @@
-#include "panier.h"
-#include "produit.h"
+#include "../include/panier.h"
+#include "../include/produit.h"
 
 void Panier::ajouterProduit(Produit* p, int qte) {
     produits.push_back(p);
@@ -43,10 +43,6 @@ double Panier::calculTotalTTC() {
     return calculTotalHT() + calculTVA();
 }
 
-std::vector<Produit*> Panier::getProduits() {
-    return produits;
-}
+std::vector<Produit*>& Panier::getProduits() {return produits;}
 
-std::vector<int> Panier::getQuantities() {
-    return quantites;
-}
+std::vector<int>& Panier::getQuantity() {return quantites;}
