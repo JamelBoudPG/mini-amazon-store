@@ -7,7 +7,7 @@ void Panier::ajouterProduit(Produit* p, int qte) {
 }
 
 void Panier::supprimerProduit(int id) {
-    for(int i = 0; i < produits.size(); i++) {
+    for(size_t i = 0; i < produits.size(); i++) {
         if(produits[i]->getIdProduit() == id) {
             produits.erase(produits.begin() + i);
             quantites.erase(quantites.begin() + i);
@@ -24,7 +24,7 @@ void Panier::vider() {
 double Panier::calculTotalHT() {
     double total = 0;
 
-    for(int i = 0; i < produits.size(); i++)
+    for(size_t i = 0; i < produits.size(); i++)
         total += produits[i]->getPrix() * quantites[i];
 
     return total;
@@ -33,7 +33,7 @@ double Panier::calculTotalHT() {
 double Panier::calculTVA() {
     double tva = 0;
 
-    for(int i = 0; i < produits.size(); i++)
+    for(size_t i = 0; i < produits.size(); i++)
         tva += produits[i]->calculerTVA() * quantites[i];
 
     return tva;

@@ -127,9 +127,9 @@ ostream& operator <<(ostream& os, Produit& pdt){
 */
 
 double Electronique::computerScore(Panier& Cart, vector<Commande>& History) const{
-    int i,j;
+    size_t i,j;
     double score = 5.0;
-    int maxHistory = 5;
+    size_t maxHistory = 5;
     //Partie de compter dependant du la panier
     for(i=0; i<Cart.getProduits().size(); i++){
         Produit *pdt = Cart.getProduits()[i];
@@ -143,8 +143,8 @@ double Electronique::computerScore(Panier& Cart, vector<Commande>& History) cons
     }
 
     //Partie Historique des achats;
-    int effectiveHistory = min(maxHistory, (int)History.size());
-    int start = History.size() - effectiveHistory;
+    size_t effectiveHistory = std::min(maxHistory, History.size());
+    size_t start = History.size() - effectiveHistory;
 
     for(i=start; i<History.size(); i++){
         double recencyWeight = (double)(i - start + 1) / effectiveHistory;
@@ -179,9 +179,9 @@ double Electronique::computerScore(Panier& Cart, vector<Commande>& History) cons
 }
 
 double Alimentaire::computerScore(Panier& Cart, vector<Commande>& History) const{
-    int i,j;
+    size_t i,j;
     double score = 5.0;
-    int maxHistory = 5;
+    size_t maxHistory = 5;
     //Partie de compter dependant du la panier
     for(i=0; i<Cart.getProduits().size(); i++){
         Produit *pdt = Cart.getProduits()[i];
@@ -195,8 +195,8 @@ double Alimentaire::computerScore(Panier& Cart, vector<Commande>& History) const
     }
 
     //Partie Historique des achats;
-    int effectiveHistory = min(maxHistory, (int)History.size());
-    int start = History.size() - effectiveHistory;
+    size_t effectiveHistory = std::min(maxHistory, History.size());
+    size_t start = History.size() - effectiveHistory;
 
     for(i=start; i<History.size(); i++){
         double recencyWeight = (double)(i - start + 1) / effectiveHistory;
@@ -233,9 +233,9 @@ double Alimentaire::computerScore(Panier& Cart, vector<Commande>& History) const
 }
 
 double Vetements::computerScore(Panier& Cart, vector<Commande>& History) const{
-    int i,j;
+    size_t i,j;
     double score = 5.0;
-    int maxHistory = 5;
+    size_t maxHistory = 5;
     //Partie de compter dependant du la panier.
     for(i=0; i<Cart.getProduits().size(); i++){
         Produit *pdt = Cart.getProduits()[i];
@@ -249,8 +249,8 @@ double Vetements::computerScore(Panier& Cart, vector<Commande>& History) const{
     }
 
     //Partie Historique des achats;
-    int effectiveHistory = min(maxHistory, (int)History.size());
-    int start = History.size() - effectiveHistory;
+    size_t effectiveHistory = std::min(maxHistory, History.size());
+    size_t start = History.size() - effectiveHistory;
 
     for(i=start; i<History.size(); i++){
         double recencyWeight = (double)(i - start + 1) / effectiveHistory;
@@ -286,9 +286,9 @@ double Vetements::computerScore(Panier& Cart, vector<Commande>& History) const{
 }
 
 double Livre::computerScore(Panier& Cart, vector<Commande>& History) const{
-    int i,j;
+    size_t i,j;
     double score = 5.0;
-    int maxHistory = 5;
+    size_t maxHistory = 5;
     //Partie de compter dependant du la panier.
     for(i=0; i<Cart.getProduits().size(); i++){
         Produit *pdt = Cart.getProduits()[i];
@@ -305,8 +305,8 @@ double Livre::computerScore(Panier& Cart, vector<Commande>& History) const{
     }
 
     //Partie Historique des achats;
-    int effectiveHistory = min(maxHistory, (int)History.size());
-    int start = History.size() - effectiveHistory;
+    size_t effectiveHistory = std::min(maxHistory, History.size());
+    size_t start = History.size() - effectiveHistory;
 
     for(i=start; i<History.size(); i++){
         double recencyWeight = (double)(i - start + 1) / effectiveHistory;
@@ -337,10 +337,10 @@ double Livre::computerScore(Panier& Cart, vector<Commande>& History) const{
 }
 
 double Meuble::computerScore(Panier& Cart, vector<Commande>& History) const{
-    int i,j;
+    size_t i,j;
     double score = 5.0;
-    int maxHistory = 5;
-    int furnitureScale = 0;
+    size_t maxHistory = 5;
+    size_t furnitureScale = 0;
 
     //Partie de compter dependant du la panier.
     for(i=0; i<Cart.getProduits().size(); i++){
@@ -357,8 +357,8 @@ double Meuble::computerScore(Panier& Cart, vector<Commande>& History) const{
     }
 
     //Partie Historique des achats;
-    int effectiveHistory = min(maxHistory, (int)History.size());
-    int start = History.size() - effectiveHistory;
+    size_t effectiveHistory = std::min(maxHistory, History.size());
+    size_t start = History.size() - effectiveHistory;
 
     for(i=start; i<History.size(); i++){
         double recencyWeight = (double)(i - start + 1) / effectiveHistory;
@@ -388,9 +388,9 @@ double Meuble::computerScore(Panier& Cart, vector<Commande>& History) const{
 }
 
 double Parapharmacie::computerScore(Panier& Cart, vector<Commande>& History) const{
-    int i,j;
+    size_t i,j;
     double score = 5.0;
-    int maxHistory = 5;
+    size_t maxHistory = 5;
     //Partie de compter dependant du la panier
     for(i=0; i<Cart.getProduits().size(); i++){
         Produit *pdt = Cart.getProduits()[i];
@@ -404,8 +404,8 @@ double Parapharmacie::computerScore(Panier& Cart, vector<Commande>& History) con
     }
 
     //Partie Historique des achats;
-    int effectiveHistory = min(maxHistory, (int)History.size());
-    int start = History.size() - effectiveHistory;
+    size_t effectiveHistory = std::min(maxHistory, History.size());
+    size_t start = History.size() - effectiveHistory;
 
     for(i=start; i<History.size(); i++){
         double recencyWeight = (double)(i - start + 1) / effectiveHistory;
