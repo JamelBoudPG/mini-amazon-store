@@ -30,7 +30,7 @@ prod4                xx      xx%    xxx.xxDH   xxx.xxDH
 
 void Commande::AfficheCommande() {
     //initialisation des variables à utiliser;        
-    int i, col1=15, col2=8, col3=4,col4=8, col5=8;
+    int col1=15, col2=8, col3=4,col4=8, col5=8;
 
     for(auto& pdt : getProduits()){
         std::stringstream ss1, ss2;
@@ -52,18 +52,17 @@ void Commande::AfficheCommande() {
     std::cout << std::setw(col3) << "TVA%" << " | ";
     std::cout << std::setw(col4) << "Prix TVA" << " | ";
     std::cout << std::setw(col5) << "Prix HT" <<std::endl;
-    for (i=0; i<ProductsList.size(); i++){
+    for(size_t i=0; i<ProductsList.size(); i++){
         std::stringstream ss1, ss2;
         ss1 << std::fixed << std::setprecision(2) << ProductsList[i]->calculerTVA();
         ss2 << std::fixed << std::setprecision(2) << ProductsList[i]->getPrix();
         std::cout << std::left << std::setw(col1+3) << ProductsList[i]->getNomProduit();
         std::cout << std::setw(col2+3) << Quantity[i];
-        std::cout << std::setw(col3+3) << ProductsList[i]->getTVA() << "%";
-        std::cout << std::setw(col4+3) << ss1.str() << "DH";
-        std::cout << std::setw(col5) << ss2.str() << "DH" <<std::endl;
+        std::cout << std::setw(col3+3) << (std::to_string(ProductsList[i]->getTVA()) + "%") ;
+        std::cout << std::setw(col4+6) << ss1.str() + "DH";
+        std::cout << std::setw(col5+3) << ss2.str() + "DH" <<std::endl;
     }
-    std::cout << std::left << std::setfill('-') << std::setw(col1+col2+col3+col4+col5+12) <<std::endl;
-    std::cout << std::left << std::setw(col1+col2+col3+6) << "Total :" << std::setw(col4+3) << Prix_HT << "DH" <<std::endl;
-    std::cout << std::left << std::setw(col1+col2+col3+6) << "Total TVA:" << std::setw(col4) << Prix_TVA << "DH" <<std::endl;
-    std::cout << std::left << std::setw(col1+col2+col3+6) << "Prix TTC :" << std::setw(col4) << Prix_TTC << "DH" <<std::endl;
+    std::cout << std::left << std::setw(col1+col2+col3+6) << "Total :" << std::setw(col4) << std::to_string(Prix_HT)+"DH" <<std::endl;
+    std::cout << std::left << std::setw(col1+col2+col3+6) << "Total TVA:" << std::setw(col4) << std::to_string(Prix_TVA)+"DH" <<std::endl;
+    std::cout << std::left << std::setw(col1+col2+col3+6) << "Prix TTC :" << std::setw(col4) << std::to_string(Prix_TTC)+"DH" <<std::endl;
 }
