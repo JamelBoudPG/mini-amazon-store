@@ -1,4 +1,4 @@
-# MozartBeta v1.0
+# Mozart v1.0
 
 "Mozart" est officiellement ici!!!
 Mozart est une application du e-commerce développée en C++ avec une GUI Raylib.
